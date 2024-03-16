@@ -4,7 +4,7 @@ from math import comb, pow
 
 def vypocet_pravdepodobnosti(pocet_tiketu, pocet_zapasu_na_tiket, minimalni_pocet_spravnych_tiketu):
     # Pravděpodobnost správného tipu na jednom tiketu
-    p_spravny_tip = 1 / pow(2, pocet_zapasu_na_tiket)
+    p_spravny_tip = 1 / pow(kurz, pocet_zapasu_na_tiket)
     # Pravděpodobnost špatného tipu na jednom tiketu
     p_chybny_tip = 1 - p_spravny_tip
 
@@ -22,6 +22,7 @@ def vypocet_pravdepodobnosti(pocet_tiketu, pocet_zapasu_na_tiket, minimalni_poce
 st.title('Rozdělení po tiketech')
 st.subheader('uživatel musí tefit minimálně x tiketů')
 
+kurz = st.number_input('Kurz', min_value=1, value=2)
 pocet_tiketu = st.number_input('Počet tiketů', min_value=1, value=4)
 pocet_zapasu_na_tiket = st.number_input('Počet zápasů na tiket', min_value=1, value=3)
 minimalni_pocet_spravnych_tiketu = st.number_input('Minimální počet správně tipnutých tiketů', min_value=1, value=3,
@@ -30,5 +31,4 @@ minimalni_pocet_spravnych_tiketu = st.number_input('Minimální počet správně
 if st.button('Vypočítat pravděpodobnost'):
     pravdepodobnost = vypocet_pravdepodobnosti(pocet_tiketu, pocet_zapasu_na_tiket, minimalni_pocet_spravnych_tiketu)
     st.write(
-        f'Pravděpodobnost:  {pravdepodobnost:.2%}')
-
+        f'Pravděpodobnost:  {pravdepodobnost:.4%}')
