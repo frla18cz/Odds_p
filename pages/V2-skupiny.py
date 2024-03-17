@@ -21,12 +21,14 @@ def vypocet_pravdepodobnosti(pocet_tiketu, pocet_zapasu_na_tiket, minimalni_poce
 # Streamlit uživatelské rozhraní
 st.title('Rozdělení po tiketech')
 st.subheader('uživatel musí tefit minimálně x tiketů')
+st.subheader('Přidána modifikace ke kurzu')
 
 kurz = st.number_input('Kurz', min_value=1, value=2)
 pocet_tiketu = st.number_input('Počet tiketů', min_value=1, value=4)
 pocet_zapasu_na_tiket = st.number_input('Počet zápasů na tiket', min_value=1, value=3)
 minimalni_pocet_spravnych_tiketu = st.number_input('Minimální počet správně tipnutých tiketů', min_value=1, value=3,
                                                    max_value=pocet_tiketu)
+
 
 if st.button('Vypočítat pravděpodobnost'):
     pravdepodobnost = vypocet_pravdepodobnosti(pocet_tiketu, pocet_zapasu_na_tiket, minimalni_pocet_spravnych_tiketu)
