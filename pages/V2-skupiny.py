@@ -1,5 +1,6 @@
 import streamlit as st
 from math import comb, pow
+import pandas as pd
 
 
 def vypocet_pravdepodobnosti(pocet_tiketu, pocet_zapasu_na_tiket, minimalni_pocet_spravnych_tiketu):
@@ -34,5 +35,5 @@ if st.button('Vypočítat pravděpodobnost'):
     pravdepodobnost = vypocet_pravdepodobnosti(pocet_tiketu, pocet_zapasu_na_tiket, minimalni_pocet_spravnych_tiketu)
     st.write(
         f'Pravděpodobnost:  {pravdepodobnost:.4%}')
-    st.subheader('Chart!')
+
 
