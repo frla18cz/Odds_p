@@ -134,6 +134,6 @@ minimalni_pocet_spravnych_tiketu = st.number_input('Minimální počet správně
 
 if st.button('Vypočítat pravděpodobnost'):
     vyhodnoceni = vyhodnoceni()
-    st.write(f'Pravděpodobnost:  {vyhodnoceni():.4%}')
+    st.write(f'Pravděpodobnost: {vyhodnoceni:.4%}')
 
 
